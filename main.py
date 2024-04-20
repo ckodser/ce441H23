@@ -5,6 +5,8 @@ from flask import request, current_app
 from webapp import create_app
 from time import strftime
 import traceback
+from flask import jsonify
+
 
 app = create_app()
 handler = RotatingFileHandler('app.log', maxBytes=100000, backupCount=3)
@@ -25,6 +27,12 @@ def exceptions(e):
     logger.error('%s %s %s %s %s 5xx INTERNAL SERVER ERROR\n%s', timestamp, request.remote_addr, request.method, request.scheme, request.full_path, tb)
     return e.status_code
 
+@app.errorhandler(Exception)
+def exceptions(e):
+    tb = traceback.format_exc()
+    timestamp = strftime('[%Y-%b-%d %H:%M]')
+    logger.error('%s %s %s %s %s 5xx INTERNAL SERVER ERROR\n%s', timestamp, request.remote_addr, request.method, request.scheme, request.full_path, tb)
+    return jsonify(error=str(e)), 500
 
 def main():
     app.run(debug=True, host="0.0.0.0", port=5002)
