@@ -8,8 +8,12 @@ def home():
     return render_template("home.html")
 
 @views.route("/ce441")
-def home():
+def ce441():
     return render_template("exp.html")
+
+@views.route("/scriptisworking")
+def scriptisworking():
+    return render_template("home.html")
 
 @views.route('/favicon.ico')
 def favicon():
