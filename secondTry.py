@@ -18,7 +18,7 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
             self.wfile.write(html.encode())
 
 
-serving_url = 'http://localhost:8569/'
+serving_url = 'http://91.107.157.58:8080/'
 html = f'''
 <html>
     <title>M</title>
